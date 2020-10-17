@@ -298,30 +298,32 @@ class _VimeoPlayerState extends State<VimeoPlayer> {
                       setState(() {
                         _controller.pause();
                       });
-                      position = await Navigator.push(
-                          context,
-                          PageRouteBuilder(
-                              opaque: false,
-                              pageBuilder: (BuildContext context, _, __) =>
-                                  FullscreenPlayer(
-                                      id: _id,
-                                      autoPlay: true,
-                                      controller: _controller,
-                                      position:
-                                          _controller.value.position.inSeconds,
-                                      initFuture: initFuture,
-                                      qualityValue: _qualityValue),
-                              transitionsBuilder: (___,
-                                  Animation<double> animation,
-                                  ____,
-                                  Widget child) {
-                                print(animation);
-                                return FadeTransition(
-                                  opacity: animation,
-                                  child: ScaleTransition(
-                                      scale: animation, child: child),
-                                );
-                              }));
+                      WidgetsBinding.instance.addPostFrameCallback((_) async {
+                        position = await Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                                opaque: false,
+                                pageBuilder: (BuildContext context, _, __) =>
+                                    FullscreenPlayer(
+                                        id: _id,
+                                        autoPlay: true,
+                                        controller: _controller,
+                                        position: _controller
+                                            .value.position.inSeconds,
+                                        initFuture: initFuture,
+                                        qualityValue: _qualityValue),
+                                transitionsBuilder: (___,
+                                    Animation<double> animation,
+                                    ____,
+                                    Widget child) {
+                                  print(animation);
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: ScaleTransition(
+                                        scale: animation, child: child),
+                                  );
+                                }));
+                      });
                       setState(() {
                         _controller.play();
                         _seek = true;

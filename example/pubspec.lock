@@ -206,11 +206,9 @@ packages:
   vimeoplayer:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: b802d0bb363651ac6c8632827635eb0ddee0bd37
-      url: "git@github.com:itsupport-sfu/vimeo_player.git"
-    source: git
+      path: ".."
+      relative: true
+    source: path
     version: "0.1.5"
 sdks:
   dart: ">=2.10.0-110 <=2.11.0-207.0.dev"

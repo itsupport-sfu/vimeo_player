@@ -312,7 +312,7 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
                     top: videoHeight - 80, left: videoWidth + videoMargin - 50),
                 child: IconButton(
                     alignment: AlignmentDirectional.center,
-                    icon: Icon(Icons.fullscreen, size: 30.0),
+                    icon: Icon(Icons.fullscreen_exit, size: 30.0),
                     onPressed: () {
                       setState(() {
                         _controller.pause();
