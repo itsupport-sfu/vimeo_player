@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'vimeoplayer.dart';
+import 'package:vimeoplayer/vimeoplayer.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +8,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      //primarySwatch: Colors.red,
       theme: ThemeData.dark().copyWith(
         accentColor: Color(0xFF22A3D2),
       ),
@@ -22,7 +21,7 @@ class VideoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomPadding: false,
-        backgroundColor: Color(0xFF15162B), //FF15162B // 0xFFF2F2F2
+        backgroundColor: Color(0xFF15162B),
         appBar: MediaQuery.of(context).orientation == Orientation.portrait
             ? AppBar(
                 leading: BackButton(color: Colors.white),

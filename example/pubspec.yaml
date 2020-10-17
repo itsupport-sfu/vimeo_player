@@ -23,7 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  vimeoplayer: ^0.0.1
+  vimeoplayer:
+    git:
+      url: git@github.com:itsupport-sfu/vimeo_player.git
 
 
   # The following adds the Cupertino Icons font to your application.
